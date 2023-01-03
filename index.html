@@ -51,12 +51,26 @@
     </tr>
 </table>
 <script>
-    let table = document.body.firstElementChild;
+    /*let table = document.body.firstElementChild;
 
     for (let i = 0; i < table.rows.length; i++) {
         let row = table.rows[i];
         row.cells[i].style.backgroundColor = "red";
+    } */
+    //Nous obtenons la première balise enfant du corps du document, qui est notre tableau.
+    let table = document.body.firstElementChild;
+//Nous parcourons chaque ligne du tableau en utilisant une boucle for.
+for (let i = 0; i < table.rows.length; i++) {
+    //pour chaque ligne, nous récupérons la cellule qui a l'index de l'itération de la boucle (c'est-à-dire la cellule en diagonale)
+    let row = table.rows[i];
+    for (let j = 0; j < row.cells.length; j++) {
+        //Nous modifions le style de cette cellule pour changer la couleur de fond en rouge.
+        let cell = row.cells[j];
+        if (i === j) {
+            cell.style.backgroundColor = "red";
+        }
     }
+}
     
 
     
